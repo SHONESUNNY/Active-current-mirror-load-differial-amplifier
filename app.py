@@ -88,7 +88,7 @@ def find_route():
     
     # Validate the input
     if start not in fantasy_graph or goal not in fantasy_graph:
-        return jsonify({"error": "Invalid start or goal location."})
+        return jsonify({"error": "Invalid start or goal location."}), 400
     
     # Find the shortest path using BFS
     route = bfs_shortest_path(fantasy_graph, start, goal)
