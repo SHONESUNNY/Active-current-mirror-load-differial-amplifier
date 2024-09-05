@@ -1,5 +1,4 @@
 from flask import Flask, render_template, request, jsonify
-import networkx as nx
 import folium
 from collections import deque
 
@@ -55,16 +54,24 @@ def bfs_shortest_path(graph, start, goal):
 # Create a map with the path marked
 def draw_map(graph, path=None):
     # Center the map at New Delhi
-    m = folium.Map(location=[28.6139, 77.2090], zoom_start=10)
+    m = folium.Map(location=[28.6139, 77.2090], zoom_start=12)
 
     # Add nodes (locations) to the map
     for location, coords in location_coords.items():
-        folium.Marker(location=coords, popup=location).add_to(m)
+        folium.Marker(location=coords, popup=location, icon=folium.Icon(color='blue')).add_to(m)
 
     # If there is a path, draw it on the map
     if path:
         route_coords = [location_coords[loc] for loc in path]
-        folium.PolyLine(route_coords, color="red", weight=2.5, opacity=1).add_to(m)
+        folium.PolyLine(
+            route_coords,
+            color="red",
+            weight=5,  # Increase the weight to make it look more like a road
+            opacity=0.7
+        ).add_to(m)
+    
+    # Add a Tile Layer with road details
+    folium.TileLayer('Stamen Toner').add_to(m)  # Or use another layer like 'OpenStreetMap'
 
     # Return the map as HTML
     return m._repr_html_()
