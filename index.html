@@ -83,14 +83,22 @@
                 },
                 body: `start=${encodeURIComponent(start)}&goal=${encodeURIComponent(goal)}`
             })
-            .then(response => response.json())
-            .then(data => {
-                document.getElementById('loading').style.display = 'none';
-                document.getElementById('routeResult').textContent = data.route || 'No route found.';
+            .then(response => response.text()) // Get response as text
+            .then(text => {
+                console.log(text); // Log the raw response text
+                try {
+                    const data = JSON.parse(text); // Try to parse the text as JSON
+                    document.getElementById('loading').style.display = 'none';
+                    document.getElementById('routeResult').textContent = data.route || 'No route found.';
 
-                if (data.map_html) {
-                    document.getElementById('map').innerHTML = data.map_html;
-                } else {
+                    if (data.map_html) {
+                        document.getElementById('map').innerHTML = data.map_html;
+                    } else {
+                        document.getElementById('map').innerHTML = '<p>Map not available.</p>';
+                    }
+                } catch (error) {
+                    document.getElementById('loading').style.display = 'none';
+                    document.getElementById('routeResult').textContent = 'An error occurred while processing the data.';
                     document.getElementById('map').innerHTML = '<p>Map not available.</p>';
                 }
             })
