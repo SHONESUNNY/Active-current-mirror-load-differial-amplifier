@@ -29,7 +29,7 @@ The differential input causes a redistribution of the bias current I<sub>SS</sub
 | Tail Current (I<sub>SS</sub>)    |  50      | µA     | 
 | Overdrive Voltage (V<sub>ov</sub>) | 200–300mV | V   | 
 | I<sub>D1</sub>, I<sub>D2</sub>   | 25     | µA  | 
-| V<sub>out</sub> (DC bias)        | X.XX     | V      | 
+| V<sub>in</sub> (DC operating voltage)        | 1.236    | mV      | 
 | Differential Gain (A<sub>d</sub>)| X.XX     | V/V    | 
 | Output Resistance (R<sub>out</sub>) | X.XX  | kΩ     |
 | r<sub>o</sub> of M2, M4          | X.XX     | kΩ     | 
