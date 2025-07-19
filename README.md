@@ -4,6 +4,7 @@ This project implements and simulates a differential amplifier with an active cu
 
 The differential input causes a redistribution of the bias current I<sub>SS</sub> between M1 and M2. M3 and M4 form a current mirror that reflects the current from M1's branch to M2’s, producing a single-ended output. The high impedance offered by the active load results in a high voltage gain.
 
+## Tools used : *ltspice*
 
 ---
 
@@ -27,7 +28,7 @@ The differential input causes a redistribution of the bias current I<sub>SS</sub
 | Parameter                        | Value    | Unit   | 
 |----------------------------------|----------|--------|
 | Tail Current (I<sub>SS</sub>)    |  50      | µA     | 
-| Overdrive Voltage (V<sub>ov</sub>) | 200–300mV | V   | 
+| Overdrive Voltage (V<sub>ov</sub>) | 200–300V | mV   | 
 | I<sub>D1</sub>, I<sub>D2</sub>   | 25     | µA  | 
 | V<sub>in</sub> (DC operating voltage)        | 1.236    | mV      | 
 | Differential Gain (A<sub>d</sub>)| X.XX     | V/V    | 
