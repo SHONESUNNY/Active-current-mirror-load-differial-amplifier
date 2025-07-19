@@ -2,6 +2,9 @@
 
 This project implements and simulates a differential amplifier with an active current mirror load using MOSFETs. The design leverages the benefits of high gain and compact layout, making it ideal for integrated analog front-ends.
 
+The differential input causes a redistribution of the bias current I<sub>SS</sub> between M1 and M2. M3 and M4 form a current mirror that reflects the current from M1's branch to M2’s, producing a single-ended output. The high impedance offered by the active load results in a high voltage gain.
+
+
 ---
 
 ## 📖 Theory
@@ -19,35 +22,26 @@ This project implements and simulates a differential amplifier with an active cu
 - <img width="377" height="366" alt="Screenshot 2025-07-19 120326" src="https://github.com/user-attachments/assets/aa75aa84-f59a-49be-9f1c-bd393a60ebd4" /> <img width="543" height="550" alt="image" src="https://github.com/user-attachments/assets/09e17a3f-dbf8-41cb-81f0-1af978005a10" />
 
 
-### 🧪 Working Principle
-
-The differential input causes a redistribution of the bias current I<sub>SS</sub> between M1 and M2. M3 and M4 form a current mirror that reflects the current from M1's branch to M2’s, producing a single-ended output. The high impedance offered by the active load results in a high voltage gain.
-
----
-
 ## 📊 Observations
 
-| Parameter                        | Value    | Unit   | Notes                                      |
-|----------------------------------|----------|--------|--------------------------------------------|
-| Tail Current (I<sub>SS</sub>)    |  50      | µA  | Set using biasing circuit or current sink  |
-| Overdrive Voltage (V<sub>ov</sub>) | X.XX   | V      | Typically 200–300mV                        |
-| I<sub>D1</sub>, I<sub>D2</sub>   | X.XX     | µA/mA  | Measured from simulation or hand calcs     |
-| V<sub>out</sub> (DC bias)        | X.XX     | V      | Output voltage at rest                     |
-| Differential Gain (A<sub>d</sub>)| X.XX     | V/V    | Calculated or simulated                    |
-| Output Resistance (R<sub>out</sub>) | X.XX  | kΩ     | Depends on MOSFET channel-length modulation |
-| g<sub>m</sub> of M1/M2           | X.XX     | mS     | Based on I<sub>D</sub> and V<sub>ov</sub>  |
-| r<sub>o</sub> of M2, M4          | X.XX     | kΩ     | Output impedance                           |
-| Bandwidth                        | X.XX     | MHz    | -3dB cutoff frequency                      |
-| CMRR                             | X.XX     | dB     | Measured or derived from Ad and Acm        |
-
+| Parameter                        | Value    | Unit   | 
+|----------------------------------|----------|--------|
+| Tail Current (I<sub>SS</sub>)    |  50      | µA     | 
+| Overdrive Voltage (V<sub>ov</sub>) | 200–300mV | V   | 
+| I<sub>D1</sub>, I<sub>D2</sub>   | 25     | µA  | 
+| V<sub>out</sub> (DC bias)        | X.XX     | V      | 
+| Differential Gain (A<sub>d</sub>)| X.XX     | V/V    | 
+| Output Resistance (R<sub>out</sub>) | X.XX  | kΩ     |
+| r<sub>o</sub> of M2, M4          | X.XX     | kΩ     | 
+| CMRR                             | X.XX     | dB     |
 ---
 
 ## 📷 Simulation Results
 - **Transient Response (Step Input)**  
-  ![transient response](./images/transient.png)
+  ![transient response](./transient.png)
 
 - **AC Sweep (Gain vs Frequency)**  
-  ![ac response](./images/ac_sweep.png)
+  ![ac response](./frequency_response.png)
 
 ---
 
