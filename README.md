@@ -13,7 +13,7 @@ The differential input causes a redistribution of the bias current I<sub>SS</sub
 ### ⚙️ Circuit Description
 
 - **M1 & M2**: Differential input pair.
-  **M3 & M4**: Current mirror active load.
+    ,**M3 & M4**: Current mirror active load.
 - **I<sub>SS</sub>**: Bias current source.
 - **C<sub>L</sub>**: Load capacitor = 10pF ,  Vdd =1.8V , Slew rate = 5V/usec
 - **ICMR+** = Vdd-Vsg3+Vt =1.6V     **ICMR-** = Vgs3 + Vov3 = 0.8
@@ -31,9 +31,9 @@ The differential input causes a redistribution of the bias current I<sub>SS</sub
 | Overdrive Voltage (V<sub>ov</sub>) | 200–300V | mV   | 
 | I<sub>D1</sub>, I<sub>D2</sub>   | 25     | µA  | 
 | V<sub>in</sub> (DC operating voltage)        | 1.236    | mV      | 
-| Differential Gain (A<sub>d</sub>)| X.XX     | V/V    | 
-| Output Resistance (R<sub>out</sub>) | X.XX  | kΩ     |
-| CMRR                             | X.XX     | dB     |
+| Differential Gain (A<sub>d</sub>)| 64.84     | V/V    | 
+| Output Resistance (R<sub>out</sub>) | 3.02 | kΩ     |
+| CMRR                             | 35    | dB     |
 ---
 
 ## 📷 Simulation Results
@@ -41,7 +41,7 @@ The differential input causes a redistribution of the bias current I<sub>SS</sub
   ![transient response](./transient.png)
 
 - **AC Sweep (Gain vs Frequency)**  
-  ![ac response](./frequency_response.png)
+  ![ac response](./frequency_response1.png)
 
 ---
 
