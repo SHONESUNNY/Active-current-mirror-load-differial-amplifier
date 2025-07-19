@@ -37,7 +37,7 @@ The differential input causes a redistribution of the bias current I<sub>SS</sub
 ---
 
 ## 📷 Simulation Results
-- **Transient Response (Step Input)**  
+- **Transient Response **  
   ![transient response](./transient.png)
 
 - **AC Sweep (Gain vs Frequency)**  
